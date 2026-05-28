@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f3460">
+  <title>FitTrack</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#0d1117', 800: '#161b22', 700: '#21262d', 600: '#30363d' },
+            accent: { blue: '#58a6ff', green: '#3fb950', red: '#f85149', yellow: '#d29922' }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="bg-dark-900 text-gray-100 min-h-screen">
+  <div id="root"></div>
+
+  <script src="/js/utils/storage.js"></script>
+  <script src="/js/utils/export.js"></script>
+  <script type="text/babel" src="/js/components/navbar.js"></script>
+  <script type="text/babel" src="/js/components/chart.js"></script>
+  <script type="text/babel" src="/js/components/progress-bar.js"></script>
+  <script type="text/babel" src="/js/components/modal.js"></script>
+  <script type="text/babel" src="/js/pages/dashboard.js"></script>
+  <script type="text/babel" src="/js/pages/weight.js"></script>
+  <script type="text/babel" src="/js/pages/water.js"></script>
+  <script type="text/babel" src="/js/pages/diet.js"></script>
+  <script type="text/babel" src="/js/pages/workout.js"></script>
+  <script type="text/babel" src="/js/pages/performance.js"></script>
+  <script type="text/babel" src="/js/pages/recovery.js"></script>
+  <script type="text/babel" src="/js/pages/history.js"></script>
+  <script type="text/babel" src="/js/app.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>
